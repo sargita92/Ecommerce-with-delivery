@@ -68,7 +68,7 @@ const ProductInfoItem = ({favorites, setFavorites, cart, setCart,  product }) =>
                     {product.tag}
                 </ProductShowcaseTags>
                 <ProductShowcasePrice>
-                { (product.stock > 0) ? product.price : "Produto Indisponivel no momento"}
+                { (product.stock > 0) ? product.price : "Produto Indisponível no momento"}
                 </ProductShowcasePrice>
                 <ProductShowcaseButton onClick={ () => addToCart(product)} >
                     ADD TO CART
