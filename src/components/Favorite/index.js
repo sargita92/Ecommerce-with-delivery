@@ -11,7 +11,7 @@ import {
     FavoriteRightSide, 
     FavoriteName, 
     FavoriteCategory, 
-    FavoriteDescription,
+    FavoriteTag,
     FavoritePrice,
     RemoveFavoriteButton,
 } from "./style";
@@ -38,9 +38,9 @@ const Favorite = ({ favorites, setFavorites, product }) => {
                 <FavoriteCategory>
                     {product.category}
                 </FavoriteCategory>
-                <FavoriteDescription>
-                    {product.description}
-                </FavoriteDescription>
+                <FavoriteTag>
+                    {product.tag}
+                </FavoriteTag>
                 <FavoritePrice>
                 { (product.stock > 0) ? product.price : "Produto Indisponivel no momento"}
                 </FavoritePrice>

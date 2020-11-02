@@ -15,15 +15,22 @@ const Favorites = ({ cart, setCart, favorites, store }) => {
 
     const addToCart = ( ) => {
 
-        let auxFavorite = favorites.filter( f => store.find( s =>  s.id === f.id ).stock > 0 && cart.filter( s =>  s.id !== f.id ).length > 0 );
+        if(cart.length > 0){
+            let auxFavorite = favorites.filter( f => store.find( s =>  s.id === f.id ).stock > 0 && cart.filter( c =>  c.id !== f.id ).length > 0 );
 
-        if( auxFavorite.length > 0 ){ 
-            let auxCart = [...cart, ...auxFavorite ];
-            setCart(auxCart); 
-         }
+            if( auxFavorite.length > 0 ){
+                let auxCart = [...cart, ...auxFavorite ];
+                setCart(auxCart); 
+             }
 
+        }else{
 
-        history.push('/shop')
+            let auxFavorite = favorites.filter( f => store.find( s =>  s.id === f.id ).stock > 0 );
+
+            if( auxFavorite.length > 0 ){ setCart(auxFavorite); }
+        }
+
+        history.push('/shop');
     }
 
     const genProduct = ( obj ) => {

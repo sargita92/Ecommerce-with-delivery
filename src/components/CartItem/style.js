@@ -113,7 +113,7 @@ export const CartItemCategory = styled.label`
     margin-bottom: 0.3em;
 `;
 
-export const CartItemDescription = styled.label`
+export const CartItemTag = styled.label`
     width: 90%;
     text-align: left;
     font-size: 0.6em;

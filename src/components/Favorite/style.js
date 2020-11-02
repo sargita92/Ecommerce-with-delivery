@@ -64,7 +64,7 @@ export const FavoriteCategory = styled.label`
     margin-bottom: 0.3em;
 `;
 
-export const FavoriteDescription = styled.label`
+export const FavoriteTag = styled.label`
     width: 90%;
     text-align: left;
     font-size: 0.6em;

@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Main from "../main";
+import Main from "../Main";
 import Liked from "../Liked";
 import Shop from "../Shop";
 import Search from "../Search";
+import Product from "../Product";
 
 const App = () => {
 
@@ -15,6 +16,7 @@ const App = () => {
             <Route path="/liked" component={Liked}/>
             <Route path="/Shop" component={Shop}/>
             <Route path="/Search" component={Search}/>
+            <Route path="/product/:id" component={Product}/>
         </Switch>
       </Router>
 

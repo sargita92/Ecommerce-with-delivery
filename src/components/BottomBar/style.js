@@ -19,6 +19,7 @@ export const BottomBarContainer = styled.div`
     background-color: var(--primary-bg-color);
     border: 0.1em solid var(--secondary-bg-color);
     border-radius: 1em;
+    box-shadow: 5px 5px 10px var(--secondary-bg-color);
 
 
     > svg{

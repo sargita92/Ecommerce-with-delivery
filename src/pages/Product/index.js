@@ -1,18 +1,18 @@
 import React from 'react';
-import SearchBar from '../../components/SearchBar';
+import ProductInfo from '../../components/ProductInfo';
 import TopBar from "../../components/TopBar";
 import BottomBar from "../../components/BottomBar";
 
-const Search = () => {
+const Product = ( { match } ) => {
 
     return (
         <div>
             <TopBar />
-            <SearchBar />
+            <ProductInfo match={match} />
             <BottomBar />
         </div>
 
     );
 };
 
-export default Search;
+export default Product;

@@ -24,7 +24,7 @@ export default function products(state = INITIAL_STATE, action){
             ...state,
             cart: action.data,
         } 
-    } 
+    }
 
     return state;
 }

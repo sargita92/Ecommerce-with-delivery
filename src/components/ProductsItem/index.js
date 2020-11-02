@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { useHistory } from "react-router-dom";
 
 import * as ProductsActions from "../../store/actions/products";
 
@@ -9,7 +10,9 @@ import { ProductContainer, FavoriteButton, ProductImage, ProductName, ProductPri
 import { FavoriteBorder } from '@material-ui/icons';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-const Product = ({ product, favorites, setFavorites, cart, setCart }) => {
+const ProductsItem = ({ product, favorites, setFavorites, cart, setCart }) => {
+
+    let history = useHistory();
 
     const addToFavorites = ( selectedProduct ) => {
         if(favorites && favorites.filter( f => selectedProduct.id === f.id  ).length > 0 ){ return; }
@@ -34,7 +37,7 @@ const Product = ({ product, favorites, setFavorites, cart, setCart }) => {
     }
 
     return (
-        <ProductContainer>
+        <ProductContainer onClick={ () => history.push(`/product/${product.id}`)} >
             <FavoriteButton>
                 { 
                     (favorites && favorites.filter( f => product.id === f.id  ).length > 0 ) 
@@ -54,6 +57,7 @@ const Product = ({ product, favorites, setFavorites, cart, setCart }) => {
 //Transforma o reducer em props
 const mapStateToProps = (state) => ({
     favorites: state.products.favorites,
+    store: state.products.store,
     cart: state.products.cart,
   });
   
@@ -61,4 +65,4 @@ const mapStateToProps = (state) => ({
   const mapDispatchToProps = (dispatch) =>
     bindActionCreators(ProductsActions, dispatch);
   
-  export default connect(mapStateToProps, mapDispatchToProps)(Product);
+  export default connect(mapStateToProps, mapDispatchToProps)(ProductsItem);

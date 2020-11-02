@@ -14,7 +14,7 @@ import {
     CartItemRightSide, 
     CartItemName, 
     CartItemCategory, 
-    CartItemDescription,
+    CartItemTag,
     CartItemPrice,
     RemoveCartItemButton
 } from "./style";
@@ -61,9 +61,9 @@ const CartItem = ({ product, cart, setCart }) => {
                 <CartItemCategory>
                     {product.category}
                 </CartItemCategory>
-                <CartItemDescription>
-                    {product.description}
-                </CartItemDescription>
+                <CartItemTag>
+                    {product.tag}
+                </CartItemTag>
                 <CartItemPrice>
                 { (product.stock > 0) ? product.price : "Produto Indisponivel no momento"}
                 </CartItemPrice>
